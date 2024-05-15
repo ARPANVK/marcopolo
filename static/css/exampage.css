@@ -1,0 +1,165 @@
+/* Import Area */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+#quiz-container{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.slide_card{
+    border: 3px blue solid;
+    background: navajowhite;
+    width: 1200px;
+    padding: 15px;
+}
+.navigation{
+    width: 400px;
+}
+.card_quiz{
+    height: 300px;
+}
+.question{
+    font-family: 'Rubik', sans-serif;
+}
+.radio{
+    font-family: 'Rubik', sans-serif;
+}
+.question_head{
+    font-family: 'Kanit', sans-serif;
+}
+#Submit_ans{
+    margin:25px ;
+    padding: 10px 25px;
+    background: rgb(0, 63, 0);
+    color: bisque;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    box-shadow:7px 10px 10px rgb(0, 12, 6);
+    border: none;
+}
+#submit_exam{ 
+    padding: 10px 25px;
+    background: rgb(255, 102, 0);
+    color: bisque;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    box-shadow:7px 10px 10px rgb(228, 178, 16);
+    border: none;
+}
+
+/* Question number decoration */
+.navigation{
+    margin: 0 5px;
+    /* border: 3px solid rgb(79, 216, 0); */
+}
+
+.card_q_no{
+    height: 400px;
+    padding: 15px;
+    margin: 7px;
+    border: 3px solid rgb(228, 178, 16);
+}
+.card_q_no a{
+    cursor: pointer;
+    display: inline-block;
+    width: 35px;
+    padding: 10px;
+    height: 45px;
+    margin: 5px;
+    border: 2px solid lightseagreen;
+    font-size: 30px;
+    text-decoration: none;
+    color: rgb(0, 75, 59);
+    background-image: linear-gradient(rgba(168, 241, 238, 0.637),lightseagreen,rgb(4, 105, 100));
+    border-radius: 0 0 18px 0;
+}
+.card_q_no a:hover{
+    border: 2px solid rgb(0, 59, 23);
+    color: rgb(243, 243, 243);
+    background:rgba(7, 44, 17, 0.637);
+}
+
+/* After Submit */
+#aleart_box{
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    height: 300px;
+    width: 500px;
+    background: red;
+    display: none;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 23px;
+}
+#aleart_form{
+    position: absolute;
+    top: 50px;
+    /* left: 30px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+#aleart_form input{
+    display: none;
+}
+#submit_all{
+    margin:25px ;
+    padding: 10px 25px;
+    background: rgb(0, 63, 0);
+    color: bisque;
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    box-shadow:7px 10px 10px rgb(0, 12, 6);
+    border: none;
+}
+#view_score{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    height: 300px;
+    width: 500px;
+    display: none;
+    z-index: 1000;
+    background: pink;
+    padding: 20px;
+
+}
+#view_score_head{
+    font-family: "Poetsen One", sans-serif;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+    z-index: 999; /* Ensure overlay is above all other content */
+}
+
+
+/* Candidate Data design */
+#candidateData{
+    background: turquoise;
+    padding: 30px;
+}
+#candidate_personal{
+    display: flex;
+    flex-direction: row;
+    font-family: "Ubuntu", sans-serif;
+}
+#avater_img{
+    width: 113px;
+    padding: 5px 30px;
+}

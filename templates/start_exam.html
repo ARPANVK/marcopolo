@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Exam</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Sedan+SC&display=swap');
+
+        body {
+            height: 100%;
+            border: 5px solid orange;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h4 {
+            font-family: "Sedan SC", serif;
+            font-size: 30px;
+            color: rgb(6, 132, 190);
+        }
+
+        button {
+            display: block;
+            background-image: linear-gradient(45deg, #FF512F 0%, #F09819 51%, #FF512F 100%);
+            cursor: pointer;
+            border: none;
+            transition: 1s;
+            margin: 10px;
+            display: none;
+        }
+
+
+        button a {
+            text-decoration: none;
+            color: rgb(18, 1, 44);
+            font-size: 20px;
+            font-family: "Sedan SC", serif;
+            font-weight: bold;
+            margin: 20px 20px 20px 20px;
+        }
+
+        p{
+            font-family: "Lora", serif;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        #chk_box{
+            font-size: 20px;
+        }
+        label{
+            margin: 5px;
+            font-family: "Lora", serif;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>Rules for the examination</h4>
+    <div id="rules">
+        <p>1. You have 15 question for this examination. You have 20 minute to complete your examinition.</p>
+        <p>2. You have 4 options per question. Click on your choiceable option and <b>don't forget to click on 'Save
+                Response' button(Green Button).</b>If you don't click it, then your choiced answer may not be submited.
+        </p>
+        <p>3. You can traivel any question by clicking question button at right side of your screen. For example, you
+            want to visit question 10. Then Please click '10' button at right side of your screen. It will take you at
+            10th question.</p>
+        <p>4. After complete your exam,<b></b> you can submit your all responses by clicking 'Submit' button.</b> Then
+            you will get a popup. Where system will show how meny question you have attempt for your confirmation.<b>
+                Please click 'Confirm Submit' on the popup.</b> Then another opoup will be appear. Where we can see your
+            score by clicking 'View Score' button.</p>
+        <p>5. There was no negative marking for any wrong attempt.</p>
+        <p>6. Please check your name, photo and details showing below of the page is currect or not. If currect, then
+            continue your exam. If not, then please contact with your invigilator.</p>
+        <p>7. Please don't carry any electrical and bluetooth device (like mobile, smirt watch, headphone) etc with you
+            during the examination. If you cought with it by invigilator, then your exam can be canceeled.</p>
+    </div>
+    <p>If you read all rules and instractions and you are agree with it, then click on the check box below.</p>
+    <div id="chk_box">
+        <input type="checkbox" name="chk" id="chk">
+        <label for="chk">I Agree All Rules and Regulations.</label>
+    </div>
+    <button id="btn"><a href="{% url 'home' %}">Start Exam</a></button>
+
+
+    <script>
+        document.getElementById('chk').addEventListener('change',function () {
+            btn = document.getElementById('btn')
+            if(this.checked){
+                btn.style.display = 'block';
+            }
+            else{
+                btn.style.display = 'none';
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+

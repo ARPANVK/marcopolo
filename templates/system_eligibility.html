@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Eligibility</title>
+    <style>
+        #status{
+            display: none;
+        }
+        #lic_data{
+            display: none;
+        }
+        #lic_pass{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>Verity Yourself</h3>
+    <form action="" method="post">{% csrf_token %}
+    <input type="text" name="code_input">
+    <input type="submit" value="Submit">
+</form>
+    <p id = 'lic_data'>{{lic}}</p>
+    <p id="status"></p>
+    <a href="{% url 'ghor' %}" onclick="handleClick()" id="lic_pass">Go Back</a>
+    <script src="{% static 'js/system_eligibility.js' %}"></script>
+</body>
+</html>

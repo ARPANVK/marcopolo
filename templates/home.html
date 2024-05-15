@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jersey+25&family=Kanit:ital,wght@1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #nav{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 140px;
+            background: rgba(205, 156, 209, 0.199);
+        }
+        .logo{
+            display: flex;
+            flex-direction: row;
+        }
+        .logo img{
+            height: 155px;
+            width: auto;
+        }
+        .logo a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 70px;
+            font-family: "Jersey 25", sans-serif;
+            color: rgb(247, 10, 100);
+        }
+        .navcontain{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-size: 25px;
+            margin-left: auto;
+            font-family: "Ubuntu", sans-serif;
+        }
+        .navcontain a{
+            padding-right: 100px;
+        }
+        #bannar{
+            background-image: url("{% static 'image/index_bg.jpeg' %}");
+            opacity: 0.4;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 500px;
+        }
+        #head_home{
+            position: relative;
+            top: -100px;
+            font-size: 80px;
+        }
+        #img_sub{
+            position: absolute;
+            top: 137.3px;
+        }
+        #head_home{
+            position: absolute;
+            width: 780px;
+            top: 310px;
+            left:520px;
+            font-size: 120px;
+            font-family: "Jersey 25", sans-serif;
+            color: rgb(252, 0, 147);
+        }
+        a{
+            text-decoration: none;
+        }
+        #btns{
+            position: absolute;
+            top: 350px;
+            left:650px;
+            font-family: "Ubuntu", sans-serif;
+        }
+        #btns a{
+            margin: 30px;
+            font-size: 25px;
+            background-color: rgb(252, 0, 147);
+            color: white;
+            padding: 10px;
+            border-radius: 7px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div class="logo">
+            <img src="{% static 'image/main_logo.png' %}" alt="logo_png">
+            <a href="#">MarcoPolo</a>
+        </div>
+        <div class="navcontain">
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+    <div id="bannar"></div>
+    <div id="main_part">
+        <div id="img_sub">
+            <img src="{% static 'image/happy_girl.png' %}" alt="happy girl">
+            <h3 id="head_home">Test yourself !!</h3>
+        </div>
+        <div id="btns">
+            <a href="{% url 'login' %}">Go and login</a>
+            <a href="{% url 'syseli' %}">Check System</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+</head>
+<body>
+    Register Yourself!
+    <h2>Sign Up</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+    </form>
+
+    <!-- <form  method="post" id="register" action="{% url 'signup'%}">{% csrf_token %}
+        <div>
+            <label for="{{form.username.id_for_label}}">UserName :</label>
+            <input type="text" name=""{{form.username.name}} class="reg_username">
+            <span>{{form.username.errors}}</span>
+        </div>
+        <div>
+            <label for="{{form.password1.id_for_label}}">Enter Password :</label>
+            <input type="password" name="{{form.password1.name}}" class="reg_username">
+            <span>{{form.password1.errors}}</span>
+        </div>
+        <div>
+            <label for="{{form.password2.id_for_label}}">Re-Enter Password :</label>
+            <input type="password" name="{{form.password2.name}}" class="reg_username">
+            <span>{{form.password2.errors}}</span>
+        </div>
+        <button type="submit" id="register_entry_gate">Log in</button>
+    </form> -->
+</body>
+</html>

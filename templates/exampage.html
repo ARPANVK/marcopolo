@@ -1,0 +1,95 @@
+<!-- quiz_template.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="{% static 'css/exampage.css' %}">
+    <style>
+        .slide {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="quiz-container">
+        <div class="slide_card">
+            {% for question in questions %}
+            <div class="slide{% if forloop.first %} active{% endif %}" id="slide{{ forloop.counter }}">
+                <div class="card_quiz">
+                    <h2 class="question_head">Question {{ forloop.counter }}</h2>
+                    <p class="question">{{ question.question }}</p>
+                    <form id="form{{ forloop.counter }}" onsubmit="return submitAnswer({{ forloop.counter }})"
+                        method="post">{% csrf_token %}
+                        <p class="radio"><input type="radio" name="answer{{ forloop.counter }}" value="option1">
+                            {{question.option_1}}<br></p>
+                        <p class="radio"><input type="radio" name="answer{{ forloop.counter }}" value="option2">
+                            {{question.option_2}}<br></p>
+                        <p class="radio"><input type="radio" name="answer{{ forloop.counter }}" value="option3">
+                            {{question.option_3}}<br></p>
+                        <p class="radio"><input type="radio" name="answer{{ forloop.counter }}" value="option4">
+                            {{question.option_4}}<br></p>
+                </div>
+                <button type="submit" id="Submit_ans">Save Response</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <div class="navigation">
+            <div class="card_q_no">
+                {% for i in numbers %}
+                <a href="#" onclick="showSlide({{ forloop.counter }})" class="q_no">{{ forloop.counter }}</a>
+                {% endfor %}
+            </div>
+
+            <button type="button" onclick="submitQuiz();" id="submit_exam">Submit</button>
+        </div>
+    </div>
+    <div id="candidateData">
+        <div id="candidate_personal">
+            <img src="{% static 'image/avatar.jpeg' %}" alt="avater" id="avater_img">
+            <div id="candidate_personal_text">
+                <p>Candidate Tarzan</p>
+                <p> Exam id : {{username}}</p>
+            </div>
+            <div id="timezone">
+                <h3>Time Left</h3>
+                <h3 id="countdown">Loading ...</h3>
+            </div>
+        </div>
+    </div>
+    <div id="aleart_box">
+        <form action="/quiz/" method="post" id="aleart_form">{% csrf_token %}
+            <h4>You are going to submit your exam Finally. Please click on 'Submit All' button.</h4>
+            <input type="text" value="{{ my_input_value }}" name="UserInput" id="user_resp_send">
+            <!-- <button type="submit" id="submit_all"><a href="{% url 'Check_Ans' %}">View Score</a></button> -->
+            <!-- <button type="submit" id="submit_all" onclick="submitQuiz();showScore();">Submit All</button> -->
+            <button type="submit" id="submit_all" onclick="submitQuiz();">Submit All</button>
+        </form>
+    </div>
+
+    <div id="overlay"></div>
+    <div id="view_score">
+        <h3 id="view_score_head">Hi Buddy! You have complete your exam. Click on 'View Score' to check score.</h3>
+        <form action="{% url 'Check_Ans' %}" method="POST">{% csrf_token %}
+            <button type="submit">Mail Send</button>
+        </form>
+        <!-- <a href="{% url 'Check_Ans' %}">View Score</a> -->
+    </div>
+
+    <script src="{% static 'js/exampage.js' %}"></script>
+
+</body>
+
+</html>
